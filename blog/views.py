@@ -3,6 +3,11 @@ from .models import Post
 from django.utils import timezone
 from .forms import PostForm
 
+def main_page(request):
+
+    return render(request, 'blog/main_page.html', {})
+
+
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
