@@ -1,24 +1,18 @@
-<html>
+{% extends 'blog/base.html' %}
 
-    <head>
-        <title>Jacob Reilly Bridiging Coursework</title>
-    </head>
-
-    <body>
-    {% for post in posts%}
+{% block content %}
+    {% for post in posts %}
         
         
-         <div>
+        <div>
             
-            <h2>{{post.title}}</h2>
+            <h1><a href="{% url 'post_detail' pk=post.pk %">{{ post.title }}</a>}</h1>
             <p>{{post.text |linebreaksbr}}</p>
             <p>Published: {{post.published_date}}. Written by {{post.author}}</p>
 
-         </div>
+        </div>
             
         
 
     {% endfor %}
-
-    </body>
-    </html>
+{% endblock %}
