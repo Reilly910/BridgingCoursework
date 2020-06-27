@@ -1,5 +1,13 @@
-h1, h2{
+p{
 
     color: #C25100;
+
+}
+
+div{
+
+    text-align: center;
+    color:#C25100;
+    font-family: 'Franklin Gothic Medium';
 
 }
