@@ -31,4 +31,9 @@ def post_new(request):
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 
+def CV(request):
+    return render(request, 'blog/cv.html', {})
+
+
+
 
