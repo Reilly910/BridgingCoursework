@@ -194,3 +194,10 @@ a, a:hover{
     right: 0;
     width: 100%;
     height: 100%;
+  }
+
+  .icon-links{
+
+    list-style-type: none;
+
+  }

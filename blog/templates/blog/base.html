@@ -15,12 +15,20 @@
             <!--<a href="/"><img src = "{% static 'Name.jpg' %}" class="header-name" style="height:50px;"></a>-->
             <a href="/"><h1 class="page-name">Jacob Reilly</h1></a>
             <ul class="navbar">
+                
+
                 {% if user.is_authenticated %}
                     <li><a href="/accounts/logout">Log Out</a></li>
                 {%else%}
                     <li><a href="/accounts/login">Login</a></li>
                 {%endif%}
                 
+                {% if user.is_superuser %}
+
+                    <li><a href="/admin">Admin</a></li>
+
+                {% endif %}
+
                 <li><a href="/CV">CV</a></li>
                 <li><a href="/posts">Blog</a></li>
                 <li><a href="/">Home</a></li>
