@@ -1,8 +1,4 @@
-p{
 
-    color: #C25100;
-
-}
 
 .page-header{
     margin-top: -10px;
@@ -199,5 +195,25 @@ a, a:hover{
   .icon-links{
 
     list-style-type: none;
+
+  }
+
+  .post-title{
+
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+    
+    letter-spacing: 1.5px;
+    font-weight: normal;
+
+
+
+  }
+
+  .post-text{
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;   
+    color:black;
+    font-weight: normal;
 
   }

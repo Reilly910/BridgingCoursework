@@ -6,9 +6,9 @@
         
         <div class="post-list">
             
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{post.text |linebreaksbr}}</p>
-            <p>Published: {{post.published_date}}. Written by {{post.author}}</p>
+            <h1 class="post-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p class ="post-text">{{post.text |linebreaksbr}}</p>
+            <p class="post-date">Published: {{post.published_date}}. Written by {{post.author}}</p>
 
         </div>
             
