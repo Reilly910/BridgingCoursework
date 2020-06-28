@@ -1,13 +1,30 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <div class="post">
+    <div class="post-detail">
         {% if post.published_date %}
-            <div class="date">
+            <div class="detail-date">
                 {{ post.published_date }}
             </div>
         {% endif %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <h2 class="detail-title">{{ post.title }}</h2>
+        <p class="detail-text">{{ post.text|linebreaksbr }}</p>
     </div>
+
+
+    <p class="comment-header">Comments</p>
+
+    {% for comment in post.comments.all %}
+        <div class="detail-comment">
+            <p>{{ comment.text|linebreaks }}</p>
+
+
+            <div class="detail-comment-date">{{ comment.written_date }} by {{comment.author}}</div>
+           
+            
+        </div>
+    {% empty %}
+        <p>No comments here yet :(</p>
+    {% endfor %}
+
 {% endblock %}

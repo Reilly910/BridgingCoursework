@@ -1,4 +1,6 @@
 {% extends 'blog/base.html' %}
+{% load static %}
+
 
 {% block content %}
     {% for post in posts %}
@@ -7,9 +9,24 @@
         <div class="post-list">
             
             <h1 class="post-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p class ="post-text">{{post.text |linebreaksbr}}</p>
-            <p class="post-date">Published: {{post.published_date}}. Written by {{post.author}}</p>
+            
+            {% if post.text|length > 500 %}
+                
+                <p class ="post-text">{{post.text|slice:"0:500" |linebreaksbr}}... <a href="{% url 'post_detail' pk=post.pk %}">Read More</a></p>
+            {% else %}
+                <p class ="post-text">{{post.text |linebreaksbr}}</p>
+            {% endif %}
+            
+            
+            
+            
+            
+            <img src="{% static 'comment.png' %}" class="post-comments">
+            <h6 class="comment-number">{{post.comments.count}}</h6>
 
+            
+            <p class="post-date">Published: {{post.published_date}}. Written by {{post.author}}</p>
+            
         </div>
             
         
